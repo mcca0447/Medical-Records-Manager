@@ -9,17 +9,22 @@ import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
 public class MainMenu {
+	
+	
 
 	private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField cidField;
+	private JTextField phoneField;
+	private JTextField addressField;
+	private JTextField postalField;
+	private JTextField ohipField1;
+	private JTextField ohipField2;
+	private JTextField ohipField3;
+	private JTextField firstNameField;
+	private JTextField lastNameField;
+	
+	String cid, firstName, lastName, address, postalCode, ohipNum, phone, email;
+	private JTextField emailField;
 
 	/**
 	 * Launch the application.
@@ -54,108 +59,129 @@ public class MainMenu {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblWelcomeToThe = new JLabel("Welcome to the Medical Records Manager");
-		lblWelcomeToThe.setBounds(89, 11, 208, 14);
+		lblWelcomeToThe.setBounds(124, 7, 208, 14);
 		frame.getContentPane().add(lblWelcomeToThe);
 		
-		JButton btnImportClientDatabase = new JButton("Import Client Database");
-		btnImportClientDatabase.setBounds(10, 115, 156, 23);
-		frame.getContentPane().add(btnImportClientDatabase);
+		JButton importButton = new JButton("Import Client Database");
+		importButton.setBounds(10, 115, 156, 23);
+		frame.getContentPane().add(importButton);
 		
-		JButton button = new JButton("Add a new client");
-		button.addActionListener(new ActionListener() {
+		JButton clientAddButton = new JButton("Add a new client");
+		clientAddButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				cid = cidField.getText();
+				firstName = firstNameField.getText();
+				lastName = lastNameField.getText();
+				address = addressField.getText();
+				postalCode = postalField.getText();
+				ohipNum =  ohipField1.getText() + ohipField2.getText() + ohipField3.getText();
+				phone = phoneField.getText();
+				email = emailField.getText();
+				
+				
+				
 			}
 		});
-		button.setBounds(10, 65, 156, 23);
-		frame.getContentPane().add(button);
+		clientAddButton.setBounds(10, 65, 156, 23);
+		frame.getContentPane().add(clientAddButton);
 		
-		JButton button_1 = new JButton("Seach Directory");
-		button_1.addActionListener(new ActionListener() {
+		JButton searchDirButton = new JButton("Seach Directory");
+		searchDirButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button_1.setBounds(10, 92, 156, 23);
-		frame.getContentPane().add(button_1);
+		searchDirButton.setBounds(10, 92, 156, 23);
+		frame.getContentPane().add(searchDirButton);
 		
-		JButton button_2 = new JButton("Export Client Database");
-		button_2.addActionListener(new ActionListener() {
+		JButton exportButton = new JButton("Export Client Database");
+		exportButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button_2.setBounds(10, 139, 156, 23);
-		frame.getContentPane().add(button_2);
+		exportButton.setBounds(10, 139, 156, 23);
+		frame.getContentPane().add(exportButton);
 		
 		JLabel lblFirst = new JLabel("First Name:");
-		lblFirst.setBounds(200, 69, 57, 14);
+		lblFirst.setBounds(200, 69, 77, 14);
 		frame.getContentPane().add(lblFirst);
 		
 		JLabel lblLast = new JLabel("Last Name:");
-		lblLast.setBounds(200, 96, 57, 14);
+		lblLast.setBounds(200, 96, 77, 14);
 		frame.getContentPane().add(lblLast);
 		
 		JLabel lblPhone = new JLabel("Phone:");
-		lblPhone.setBounds(200, 119, 46, 14);
+		lblPhone.setBounds(200, 119, 57, 14);
 		frame.getContentPane().add(lblPhone);
 		
 		JLabel lblAddress = new JLabel("Address:");
-		lblAddress.setBounds(186, 143, 46, 14);
+		lblAddress.setBounds(186, 143, 71, 14);
 		frame.getContentPane().add(lblAddress);
 		
 		JLabel lblPostalCode = new JLabel("Postal Code:");
-		lblPostalCode.setBounds(186, 168, 71, 14);
+		lblPostalCode.setBounds(186, 168, 91, 14);
 		frame.getContentPane().add(lblPostalCode);
 		
 		JLabel lblOhip = new JLabel("OHIP #:");
-		lblOhip.setBounds(186, 192, 46, 14);
+		lblOhip.setBounds(186, 192, 71, 14);
 		frame.getContentPane().add(lblOhip);
 		
 		JLabel lblCid = new JLabel("CID:");
 		lblCid.setBounds(286, 32, 46, 14);
 		frame.getContentPane().add(lblCid);
 		
-		textField = new JTextField();
-		textField.setBounds(338, 29, 86, 20);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		cidField = new JTextField();
+		cidField.setBounds(338, 29, 86, 20);
+		frame.getContentPane().add(cidField);
+		cidField.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(277, 116, 86, 20);
-		frame.getContentPane().add(textField_3);
+		phoneField = new JTextField();
+		phoneField.setColumns(10);
+		phoneField.setBounds(277, 116, 86, 20);
+		frame.getContentPane().add(phoneField);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(277, 140, 86, 20);
-		frame.getContentPane().add(textField_4);
+		addressField = new JTextField();
+		addressField.setColumns(10);
+		addressField.setBounds(277, 140, 86, 20);
+		frame.getContentPane().add(addressField);
 		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(277, 165, 86, 20);
-		frame.getContentPane().add(textField_5);
+		postalField = new JTextField();
+		postalField.setColumns(10);
+		postalField.setBounds(277, 165, 86, 20);
+		frame.getContentPane().add(postalField);
 		
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		textField_6.setBounds(242, 193, 46, 20);
-		frame.getContentPane().add(textField_6);
+		ohipField1 = new JTextField();
+		ohipField1.setColumns(10);
+		ohipField1.setBounds(242, 193, 46, 20);
+		frame.getContentPane().add(ohipField1);
 		
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		textField_7.setBounds(298, 193, 46, 20);
-		frame.getContentPane().add(textField_7);
+		ohipField2 = new JTextField();
+		ohipField2.setColumns(10);
+		ohipField2.setBounds(298, 193, 46, 20);
+		frame.getContentPane().add(ohipField2);
 		
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
-		textField_8.setBounds(353, 193, 46, 20);
-		frame.getContentPane().add(textField_8);
+		ohipField3 = new JTextField();
+		ohipField3.setColumns(10);
+		ohipField3.setBounds(353, 193, 46, 20);
+		frame.getContentPane().add(ohipField3);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(277, 66, 122, 20);
-		frame.getContentPane().add(textField_1);
+		firstNameField = new JTextField();   
+		firstNameField.setColumns(10);
+		firstNameField.setBounds(277, 66, 122, 20);
+		frame.getContentPane().add(firstNameField);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(277, 93, 122, 20);
-		frame.getContentPane().add(textField_2);
+		lastNameField = new JTextField();
+		lastNameField.setColumns(10);
+		lastNameField.setBounds(277, 93, 122, 20);
+		frame.getContentPane().add(lastNameField);
+		
+		emailField = new JTextField();
+		emailField.setColumns(10);
+		emailField.setBounds(277, 224, 86, 20);
+		frame.getContentPane().add(emailField);
+		
+		JLabel lblEmail = new JLabel("Email:");
+		lblEmail.setBounds(186, 227, 71, 14);
+		frame.getContentPane().add(lblEmail);
 	}
 }
