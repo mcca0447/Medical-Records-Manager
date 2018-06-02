@@ -25,6 +25,8 @@ public class MainMenu {
 	
 	String cid, firstName, lastName, address, postalCode, ohipNum, phone, email;
 	private JTextField emailField;
+	
+	PatientFile[] patDB = new PatientFile[100];
 
 	/**
 	 * Launch the application.
@@ -40,6 +42,9 @@ public class MainMenu {
 				}
 			}
 		});
+		
+		
+		
 	}
 
 	/**
@@ -78,6 +83,14 @@ public class MainMenu {
 				ohipNum =  ohipField1.getText() + ohipField2.getText() + ohipField3.getText();
 				phone = phoneField.getText();
 				email = emailField.getText();
+				
+				System.out.println(cid);
+				
+				PatientFile newPatient = new PatientFile(cid, firstName, lastName, address, postalCode, ohipNum, phone, email);
+				
+				System.out.println(newPatient);
+				
+			
 				
 				
 				
